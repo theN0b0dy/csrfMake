@@ -1,6 +1,10 @@
 
 
 action_url = input("Enter the action url for your form : ")
+if action_url == "":
+    print("the action url could not be empty ")
+    exit()
+
 form_id = input("Enter Form id (default: form) : ")
 if form_id == "":
     form_id = "form"
@@ -11,7 +15,7 @@ script = input("Enter your script(defualt:[just submit the form] : ")
 if script == "":
     script = f"<script>document.getElementById('{form_id}').submit();</script>"
 
-form_inputs = {}
+form_inputs = []
 form_input = ""
 i = 0 
 while(True):
@@ -29,17 +33,32 @@ while(True):
         form_input_type = "hidden"
     if form_input_id == "":
         form_input_id = form_input
-    form_inputs[i] = {
+    form_inputs.append({
             "name": form_input,
             "value": form_input_value,
             "id": form_input_id,
             "type": form_input_type,
-    } 
+    })
 
-print("the inputs are : ", form_inputs)
-print("the script is : ", script)
+output_file_name = input("Enter the name of your html template(default: csrf.html) : ")
+if output_file_name == "":
+    output_file_name = "csrf.html"
+# opening the output file
+output_file = open(output_file_name, "w+")
 
+template = f"\
+    <html>\
+        <form action='{action_url}' method='{method}' id='{form_id}' >\
+    " 
+for inp in form_inputs:
+    template += f"<input type='{inp['type']}' name='{inp['name']}' value='{inp['value']}' id='{inp['id']}'/>"
+template += "\n" + script
+template += f"</form>\
+            </html>\
+    "
 
+output_file.write(template)
+output_file.close()
 
-
+print(f"your {output_file_name} succesfully created.")
 
