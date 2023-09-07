@@ -3,11 +3,16 @@
 ## overview
 very basic python script for creating csrf html pages
 
-## Usage
-the script hasn't any third party dependency so you can esaily run the code :
+## Installation
+the script hasn't any third party dependency so you can esaily clone and run the code :
 ```sh
 > git clone https://github.com/theN0b0dy/csrfMaker.git
 > cd csrfMaker
+```
+
+## Usage
+the script hasn't any third party dependency so you can esaily run the code :
+```sh
 > ./csrfMaker.py
 Enter the action url for your form : https://example.com/change-email
 Enter Form id (default: form) :
