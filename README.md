@@ -9,6 +9,11 @@ the script hasn't any third party dependency so you can esaily clone and run the
 > git clone https://github.com/theN0b0dy/csrfMaker.git
 > cd csrfMaker
 ```
+you can also copy the script to `/bin` directory for running the code all over the system : 
+```sh
+> cp csrfMaker /usr/local/bin
+> csrfMaker
+```
 
 ## Usage
 the script hasn't any third party dependency so you can esaily run the code :
