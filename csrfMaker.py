@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 action_url = input("Enter the action url for your form : ")
 if action_url == "":
