@@ -13,7 +13,7 @@ the script hasn't any third party dependency so you can esaily clone and run the
 ## Usage
 the script hasn't any third party dependency so you can esaily run the code :
 ```sh
-> ./csrfMaker.py
+> ./csrfMaker
 Enter the action url for your form : https://example.com/change-email
 Enter Form id (default: form) :
 Enter the Method (GET,POST,PUT,DELET, ... default:POST ) :
